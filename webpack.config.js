@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   module: {
     rules :[
       {
@@ -11,9 +12,9 @@ module.exports = {
     ]
   },
   context: __dirname + "/client" + "/components",
-  entry: "./app.js",
+  entry: "./App.js",
   output: {
-    filename: "app.js",
+    filename: "App.js",
     path: __dirname + "/dist",
   },
 }
