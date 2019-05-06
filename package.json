@@ -34,6 +34,7 @@
     "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
     "react-dom": "^16.8.6",
-    "sentiment": "^5.0.1"
+    "sentiment": "^5.0.1",
+    "socket.io": "^2.2.0"
   }
 }

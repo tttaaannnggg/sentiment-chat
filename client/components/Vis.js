@@ -1,15 +1,10 @@
 import React from "react";
 
-export default (props)=>{
-  const {sent, text} = props;
+export default (props) => {
+  const {sent} = props;
   return(
-    <div>
-      <p>
-        {text}
-      </p>
-      <p>
-        {sent}
-      </p>
-    </div>
-  )
+        <div>
+          <p> current sentiment: {sent} </p>
+        </div>
+      )
 }

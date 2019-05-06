@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
-import History from "./History";
 import Input from "./Input";
 import Vis from "./Vis";
+import MessagesContainer from "./MessagesContainer";
 import reducer from "../reducers/reducer";
 const initialState = {
         text: '',
@@ -16,8 +16,9 @@ export default (props)=>{
   
   return (
       <div>
-        <Vis sent={state.sent} text={state.text}/>
+        <MessagesContainer hist = {state.history} />
+        <Vis sent = {state.sent} />
         <Input dispatch={dispatch} text={state.text}/>
       </div>
-      )
+      );
 }

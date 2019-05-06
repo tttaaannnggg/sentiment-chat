@@ -9,7 +9,7 @@ export default (state, action)=>{
         ...state, 
         text: action.payload,
         sent: val.comparative
-      }
+      };
     case 'send':
       const msg = {
         text: state.text,
@@ -17,13 +17,13 @@ export default (state, action)=>{
       }
       const hist = [];
       hist.push(...state.history)
-      hist.push(val)
+      hist.push(msg)
       return {
         ...state,
         text: '',
         history: hist,
         sent: 0
-      }
+      };
     default:
       return state;
   }
