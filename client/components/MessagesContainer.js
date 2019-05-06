@@ -5,9 +5,7 @@ export default (props)=>{
   const {hist} = props;
   const messages = hist.map(
       item=>(
-        <div>
-          <p>{item.sent}</p>
-        </div>
+        <Message msg={item}/>
         )
       )
   return(

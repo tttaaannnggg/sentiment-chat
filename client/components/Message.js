@@ -1,10 +1,11 @@
 import React from "react"
 
 export default (props)=>{
-  const {sent} = props;
+  const {msg} = props;
   return (
       <div>
-        <p> current sentiment: {sent} </p>
+        <p> text: {msg.text} </p>
+        <p> sentiment: {msg.sent} </p>
       </div>
       )
 }
