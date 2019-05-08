@@ -1,4 +1,5 @@
 const sentiment = new (require('sentiment'))();
+const socket = io();
 
 export default (state, action)=>{
   console.log(state)
@@ -15,6 +16,7 @@ export default (state, action)=>{
         text: state.text,
         sent: state.sent
       }
+      socket.emit('send', msg, ()=>{console.log('test sending hello')})
       const hist = [];
       hist.push(...state.history)
       hist.push(msg)

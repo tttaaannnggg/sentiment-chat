@@ -3,7 +3,7 @@ import sentimentReducer from "../reducers/sentimentReducer";
 
 
 export default (props)=>{
-  const {dispatch, text} = props;
+  const {dispatch, state} = props;
   const handleKeyPress = (e)=>{
     if (e.key === 'Enter'){
       dispatch({
@@ -13,7 +13,6 @@ export default (props)=>{
     }
   }
   const handleInput = (e)=>{
-    console.log(e.target.value);
     dispatch({
       type: 'update',
       payload: e.target.value
@@ -21,7 +20,7 @@ export default (props)=>{
   }
   return(
         <div>
-          <input type ="text" value = {text} onChange ={ handleInput } onKeyPress = {handleKeyPress} />
+          <input type ="text" value = {state.text} onChange ={ handleInput } onKeyPress = {handleKeyPress} />
         </div>
       )
 }

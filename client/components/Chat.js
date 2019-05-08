@@ -18,7 +18,7 @@ export default (props)=>{
       <div>
         <MessagesContainer hist = {state.history} />
         <Vis sent = {state.sent} />
-        <Input dispatch={dispatch} text={state.text}/>
+        <Input dispatch={dispatch} state={state}/>
       </div>
       );
 }

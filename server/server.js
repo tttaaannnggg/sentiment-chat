@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+const server = require ('http').createServer(app);
+const io = require('socket.io')(server);
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
@@ -18,4 +21,12 @@ app.get('/', (req,res)=>{
   res.sendFile(path.join(__dirname, '../index.html'))
 })
 
-app.listen(3000, ()=>{console.log('listening on 3k')});
+io.on('connection', (socket)=>{
+  console.log('user connected');
+  socket.on('send', (data)=>{ console.log('data received', data) })
+});
+
+
+server.listen(3000, ()=>{
+  console.log('server on 3000')
+});
